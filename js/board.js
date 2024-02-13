@@ -23,17 +23,6 @@ board.init = function() {
     document.querySelector('#board button[title="Variants: show/[hide]"]').remove();
     document.querySelector('#board button[title="Toggle coordinates"]').remove();
 
-	document
-		.querySelector("#board .besogo-control")
-		.insertAdjacentHTML(
-			"beforeend",
-			'<button class="boardCustomBtn" id="stopBtn">Stop</button>' +
-			'<button class="boardCustomBtn" id="startBtn">Start</button>' +
-			'<button class="boardCustomBtn" id="prevSGFBtn">Prev</button>' +
-			'<button class="boardCustomBtn" id="nextSGFBtn">Next</button>' +
-			'<input type="text" id="timerMSInput" value="2000">'
-		);
-
 	board.loadNextSGF();
 };
 
