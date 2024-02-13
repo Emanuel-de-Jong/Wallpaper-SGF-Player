@@ -7,15 +7,15 @@ settings.init = function() {
 		.querySelector("#board .besogo-control")
 		.insertAdjacentHTML(
 			"beforeend",
-			'<button class="boardCustomBtn" id="stopBtn">Stop</button>' +
-			'<button class="boardCustomBtn" id="startBtn">Start</button>' +
-			'<button class="boardCustomBtn" id="prevSGFBtn">Prev</button>' +
-			'<button class="boardCustomBtn" id="nextSGFBtn">Next</button>' +
-			'<button class="boardCustomBtn" id="sgfMS500Btn">500</button>' +
-			'<button class="boardCustomBtn" id="sgfMS1000Btn">1000</button>' +
-			'<button class="boardCustomBtn" id="sgfMS1500Btn">1500</button>' +
-			'<button class="boardCustomBtn" id="sgfMS2000Btn">2000</button>' +
-			'<button class="boardCustomBtn" id="sgfMS3000Btn">3000</button>'
+			'<button id="stopBtn">Stop</button>' +
+			'<button id="startBtn">Start</button>' +
+			'<button id="prevSGFBtn">Prev</button>' +
+			'<button id="nextSGFBtn">Next</button>' +
+			'<button id="sgfMS500Btn">500</button>' +
+			'<button id="sgfMS1000Btn">1000</button>' +
+			'<button id="sgfMS1500Btn">1500</button>' +
+			'<button id="sgfMS2000Btn">2000</button>' +
+			'<button id="sgfMS3000Btn">3000</button>'
 		);
     
     settings.startBtnElement = document.getElementById("startBtn");

@@ -46,3 +46,7 @@ board.loadSGF = function(sgfContent) {
 	let sgf = besogo.parseSgf(sgfContent);
 	besogo.loadSgf(sgf, board.editor);
 };
+
+board.next = function() {
+	board.editor.nextNode(1);
+};

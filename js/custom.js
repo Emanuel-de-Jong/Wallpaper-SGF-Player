@@ -36,14 +36,19 @@ custom.timer = async function() {
             await utils.sleepAsync(50);
 			continue;
         }
+		
+		await utils.sleepAsync(settings.timerMS);
 
 		if (board.editor.getCurrent().children.length == 0) {
 			board.loadNextSGF();
 			continue;
 		}
-		
-		await utils.sleepAsync(settings.timerMS);
-		board.editor.nextNode(1);
+
+		if (!custom.isRunning) {
+			continue;
+        }
+
+		board.next();
 	}
 };
 

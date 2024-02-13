@@ -10,13 +10,8 @@
     background: rgb(100, 100, 100);
 }
 
-/* ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-} */
-
 body {
     background-color: black;
-    scrollbar-color: rgb(100, 100, 100);
 }
 
 #board {
@@ -30,9 +25,9 @@ body {
 }
 
 .besogo-control button {
+    width: fit-content !important;
     background-color: black;
     color: rgb(100, 100, 100);
-    fill: rgb(100, 100, 100);
     border: none;
 }
 
@@ -41,17 +36,9 @@ body {
 }
 
 .besogo-tree svg rect {
-   fill: black;
-}
+    fill: black;
+ }
 
-.boardCustomBtn {
-    width: fit-content !important;
-}
-
-#timerMSInput {
-    text-align: center;
-    color: rgb(100, 100, 100);
-    background-color: black;
-    width: 100px;
-    border: 2px solid rgb(100, 100, 100);
+.besogo-tree svg rect[fill="#06c2ac"] {
+   fill: rgb(100, 100, 100);
 }
