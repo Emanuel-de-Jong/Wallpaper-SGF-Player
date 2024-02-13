@@ -1,7 +1,7 @@
 var settings = {};
 
 settings.init = function() {
-    settings.timerMS = 1500;
+    settings.timerMS = 2500;
 
     document
 		.querySelector("#board .besogo-control")
@@ -15,7 +15,9 @@ settings.init = function() {
 			'<button id="sgfMS1000Btn">1000</button>' +
 			'<button id="sgfMS1500Btn">1500</button>' +
 			'<button id="sgfMS2000Btn">2000</button>' +
-			'<button id="sgfMS3000Btn">3000</button>'
+			'<button id="sgfMS2500Btn">2500</button>' +
+			'<button id="sgfMS3000Btn">3000</button>' +
+			'<button id="sgfMS3500Btn">3500</button>'
 		);
     
     settings.startBtnElement = document.getElementById("startBtn");
@@ -26,11 +28,15 @@ settings.init = function() {
     settings.sgfMS1000BtnElement = document.getElementById("sgfMS1000Btn");
     settings.sgfMS1500BtnElement = document.getElementById("sgfMS1500Btn");
     settings.sgfMS2000BtnElement = document.getElementById("sgfMS2000Btn");
+    settings.sgfMS2500BtnElement = document.getElementById("sgfMS2500Btn");
     settings.sgfMS3000BtnElement = document.getElementById("sgfMS3000Btn");
+    settings.sgfMS3500BtnElement = document.getElementById("sgfMS3500Btn");
 
     settings.sgfMS500BtnElement.addEventListener("click", () => { settings.timerMS = 500; });
     settings.sgfMS1000BtnElement.addEventListener("click", () => { settings.timerMS = 1000; });
     settings.sgfMS1500BtnElement.addEventListener("click", () => { settings.timerMS = 1500; });
     settings.sgfMS2000BtnElement.addEventListener("click", () => { settings.timerMS = 2000; });
+    settings.sgfMS2500BtnElement.addEventListener("click", () => { settings.timerMS = 2500; });
     settings.sgfMS3000BtnElement.addEventListener("click", () => { settings.timerMS = 3000; });
+    settings.sgfMS3500BtnElement.addEventListener("click", () => { settings.timerMS = 3500; });
 };
