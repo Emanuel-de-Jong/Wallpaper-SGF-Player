@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(100, 100, 100);
+    background: black;
 }
 
 body {
@@ -16,12 +16,12 @@ body {
 
 #board {
     background-color: black;
-    height: 55rem;
+    height: 52rem;
 }
 
 #board-container {
     margin: auto;
-    max-width: 45rem;
+    width: 45rem;
 }
 
 .besogo-control button {
@@ -41,4 +41,9 @@ body {
 
 .besogo-tree svg rect[fill="#06c2ac"] {
    fill: rgb(100, 100, 100);
+}
+
+#treeScrollBar {
+    background-color: rgb(100, 100, 100);
+    height: 50px;
 }

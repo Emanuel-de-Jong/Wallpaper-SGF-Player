@@ -23,6 +23,8 @@ board.init = function() {
     document.querySelector('#board button[title="Variants: show/[hide]"]').remove();
     document.querySelector('#board button[title="Toggle coordinates"]').remove();
 
+	document.getElementById("treeScrollBar").addEventListener("mousemove", (event) => board.treeScrollBarMousemoveListener(event));
+
 	board.loadNextSGF();
 };
 
@@ -49,4 +51,15 @@ board.loadSGF = function(sgfContent) {
 
 board.next = function() {
 	board.editor.nextNode(1);
+};
+
+board.treeScrollBarMousemoveListener = function(event) {
+	var container = document.getElementById("treeScrollBar");
+	var content = document.querySelector(".besogo-tree");
+	var svg = document.querySelector(".besogo-tree > svg");
+
+	var mouseX = event.clientX - container.getBoundingClientRect().left;
+	var scrollRatio = mouseX / (container.clientWidth);
+
+	content.scrollLeft = scrollRatio * (svg.clientWidth - container.clientWidth);
 };
