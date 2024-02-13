@@ -11,13 +11,13 @@ settings.init = function() {
 			'<button id="startBtn">Start</button>' +
 			'<button id="prevSGFBtn">Prev</button>' +
 			'<button id="nextSGFBtn">Next</button>' +
-			'<button id="sgfMS500Btn">500</button>' +
-			'<button id="sgfMS1000Btn">1000</button>' +
-			'<button id="sgfMS1500Btn">1500</button>' +
-			'<button id="sgfMS2000Btn">2000</button>' +
-			'<button id="sgfMS2500Btn">2500</button>' +
-			'<button id="sgfMS3000Btn">3000</button>' +
-			'<button id="sgfMS3500Btn">3500</button>'
+			'<button id="sgfMS500Btn">0.5</button>' +
+			'<button id="sgfMS1000Btn">1</button>' +
+			'<button id="sgfMS1500Btn">1.5</button>' +
+			'<button id="sgfMS2000Btn">2</button>' +
+			'<button id="sgfMS2500Btn">2.5</button>' +
+			'<button id="sgfMS3000Btn">3</button>' +
+			'<button id="sgfMS3500Btn">3.5</button>'
 		);
     
     settings.startBtnElement = document.getElementById("startBtn");
