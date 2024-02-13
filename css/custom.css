@@ -1,0 +1,57 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100);
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} */
+
+body {
+    background-color: black;
+    scrollbar-color: rgb(100, 100, 100);
+}
+
+#board {
+    background-color: black;
+    height: 55rem;
+}
+
+#board-container {
+    margin: auto;
+    max-width: 45rem;
+}
+
+.besogo-control button {
+    background-color: black;
+    color: rgb(100, 100, 100);
+    fill: rgb(100, 100, 100);
+    border: none;
+}
+
+.besogo-control button polygon {
+    fill: rgb(100, 100, 100);
+}
+
+.besogo-tree svg rect {
+   fill: black;
+}
+
+.boardCustomBtn {
+    width: fit-content !important;
+}
+
+#timerMSInput {
+    text-align: center;
+    color: rgb(100, 100, 100);
+    background-color: black;
+    width: 100px;
+    border: 2px solid rgb(100, 100, 100);
+}
