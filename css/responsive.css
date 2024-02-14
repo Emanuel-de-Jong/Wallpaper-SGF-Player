@@ -1,11 +1,26 @@
 @media (max-width: 1000px) {
-    html {
-        font-size: 20px;
-    }
-
     #boardContainer {
         width: 100%;
         margin-top: 0;
+    }
+
+    .besogo-control {
+        flex-wrap: wrap;
+    }
+
+    .besogo-control button {
+        width: 12%;
+        height: 2.5rem;
+        font-size: 26px;
+    }
+
+    .besogo-control button[title="Previous node"],
+    .besogo-control button[title="Next node"],
+    #stopBtn,
+    #startBtn,
+    #prevSGFBtn,
+    #nextSGFBtn {
+        width: 45%;
     }
 
     .besogo-tree {
