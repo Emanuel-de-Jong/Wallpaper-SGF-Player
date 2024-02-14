@@ -5,21 +5,25 @@ custom.init = function() {
     board.init();
     settings.init();
 
-    settings.startBtnElement.addEventListener("click", custom.startBtnClickListener);
-    settings.stopBtnElement.addEventListener("click", custom.stopBtnClickListener);
+    settings.prevNodeElement.addEventListener("click", custom.stopTimer);
+    settings.nextNodeElement.addEventListener("click", custom.stopTimer);
+    settings.startBtnElement.addEventListener("click", custom.startTimer);
+    settings.stopBtnElement.addEventListener("click", custom.stopTimer);
     settings.prevSGFBtnElement.addEventListener("click", custom.prevSGFBtnClickListener);
     settings.nextSGFBtnElement.addEventListener("click", custom.nextSGFBtnClickListener);
 
-	custom.isRunning = true;
+	board.editor.addListener((event) => { if (event.treeChange) custom.stopTimer(); });
+
+	custom.isTimerRunning = true;
     custom.timer();
 };
 
-custom.startBtnClickListener = function() {
-	custom.isRunning = true;
+custom.startTimer = function() {
+	custom.isTimerRunning = true;
 };
 
-custom.stopBtnClickListener = function() {
-	custom.isRunning = false;
+custom.stopTimer = function() {
+	custom.isTimerRunning = false;
 };
 
 custom.prevSGFBtnClickListener = function() {
@@ -32,21 +36,21 @@ custom.nextSGFBtnClickListener = function() {
 
 custom.timer = async function() {
 	while (true) {
-		if (!custom.isRunning) {
+		if (!custom.isTimerRunning) {
             await utils.sleepAsync(50);
 			continue;
         }
 		
 		await utils.sleepAsync(settings.timerMS);
 
+		if (!custom.isTimerRunning) {
+			continue;
+        }
+
 		if (board.editor.getCurrent().children.length == 0) {
 			board.loadNextSGF();
 			continue;
 		}
-
-		if (!custom.isRunning) {
-			continue;
-        }
 
 		board.next();
 	}

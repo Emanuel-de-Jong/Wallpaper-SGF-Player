@@ -38,10 +38,14 @@ body {
 
 .besogo-tree svg rect {
     fill: black;
- }
+}
 
 .besogo-tree svg rect[fill="#06c2ac"] {
    fill: rgb(100, 100, 100);
+}
+
+.besogo-tree svg g path {
+    stroke: rgb(100, 100, 100);
 }
 
 #treeScrollbar {

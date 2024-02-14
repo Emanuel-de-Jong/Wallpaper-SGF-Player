@@ -20,6 +20,8 @@ settings.init = function() {
 			'<button id="sgfMS3500Btn">3.5</button>'
 		);
     
+    settings.prevNodeElement = document.querySelector('#board button[title="Previous node"]');
+    settings.nextNodeElement = document.querySelector('#board button[title="Next node"]');
     settings.startBtnElement = document.getElementById("startBtn");
     settings.stopBtnElement = document.getElementById("stopBtn");
     settings.prevSGFBtnElement = document.getElementById("prevSGFBtn");
