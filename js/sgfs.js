@@ -1,18 +1,4 @@
-var sgfs = {};
-
-sgfs.init = function() {
-    sgfs.length = sgfs.sgfs.length;
-};
-
-sgfs.rnd = function() {
-    return sgfs.get(utils.randomInt(sgfs.length));
-};
-
-sgfs.get = function(index) {
-    return "(;FF[4]GM[1]SZ[19]PB[]PW[]HA[0]KM[6.5]RU[Japanese];" + sgfs.sgfs[index];
-};
-
-sgfs.sgfs = [
+sgfController.sgfs = [
     "B[pp];W[cd];B[pc];W[dp];B[ec];W[qq];B[qp];W[pq];B[nq];W[oq];B[op];W[nr];B[de];W[ce];B[df];W[cg];B[qh];W[dg];B[ld];W[ni];B[eg];W[eh];B[fg];W[fh];B[gg];W[pi];B[qk];W[qi];B[qe];W[hi];B[ih];W[cn];B[gi];W[gh];B[hh];W[gj];B[ii];W[fi];B[hk];W[fe];B[dd];W[cc];B[ok];W[fb];B[fc];W[eb];B[gc];W[of];B[mf];W[lg];B[mg];W[mh];B[og];W[qd];B[pd];W[qf];B[re];W[pg];B[db];W[lf];B[me];W[hg];B[cf];W[bf];B[be];W[bd];B[dc];W[hf];B[ef];W[jg];B[je];W[jf];B[ie];W[gl];B[gk];W[fk];B[nh];W[li];B[fl];W[gm])",
     "B[pq];W[cp];B[pd];W[dc];B[ce];W[ep];B[ed];W[ec];B[fd];W[gc];B[fp];W[fo];B[eq];W[eo];B[dq];W[gp];B[dp];W[do];B[cq];W[fq];B[co];W[cn];B[bp];W[nc];B[po];W[gd];B[bn];W[qc];B[qd];W[pc];B[od];W[nd];B[oc];W[ob];B[nb];W[mb];B[pb];W[na];B[qb];W[oq];B[op];W[nq];B[pr];W[np];B[qm];W[gf];B[fg];W[ff];B[dg];W[nn];B[jp];W[jn];B[lq];W[pl];B[hq];W[hp];B[ip];W[pm];B[ql];W[qp];B[pp];W[pn];B[qo];W[pj];B[pk];W[ok];B[qk];W[oj];B[cm];W[im];B[mf];W[nf];B[jh];W[lh];B[li];W[mh];B[hi];W[gh];B[jl];W[il])",
     "B[dd];W[pd];B[pq];W[dq];B[co];W[ep];B[qc];W[qd];B[pc];W[nc];B[oc];W[od];B[nb];W[qo];B[pi];W[dn];B[nd];W[mc];B[mb];W[lc];B[ne];W[op];B[oq];W[rc];B[rb];W[np];B[mq];W[qb];B[pb];W[ph];B[oi];W[oh];B[nh];W[ng];B[qh];W[qg];B[mg];W[qi];B[rh];W[ri];B[mh];W[og];B[pk];W[le];B[mf];W[id];B[gd];W[ra];B[qa];W[sb];B[sa];W[nq];B[re];W[rg];B[nr];W[mp];B[lq];W[rd];B[lp];W[ra];B[jc];W[jd];B[kc];W[kd];B[lb];W[jh];B[nn];W[ib];B[gc];W[ic];B[ka];W[pp];B[qq];W[or];B[mr];W[rq];B[rr];W[qp];B[rp];W[sq])",

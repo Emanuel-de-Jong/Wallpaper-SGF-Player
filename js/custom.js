@@ -1,7 +1,7 @@
 var custom = {};
 
 custom.init = function() {
-    sgfs.init();
+    sgfController.init();
     board.init();
     settings.init();
 

@@ -42,7 +42,7 @@ board.loadPrevSGF = function() {
 
 board.loadNextSGF = function() {
 	board.prevSGF = board.currentSGF;
-	board.currentSGF = sgfs.rnd();
+	board.currentSGF = sgfController.rnd();
 	board.loadSGF(board.currentSGF);
 };
 
