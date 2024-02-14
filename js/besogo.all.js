@@ -2009,7 +2009,7 @@ besogo.makeEditor = function(sizeX, sizeY) {
                 current.addChild(next);
                 current = next;
                 // Notify tree change, navigation, and stone change
-                notifyListeners({ treeChange: true, navChange: true, stoneChange: true });
+                notifyListeners({ treeChange: true, navChange: true, stoneChange: true, userStonePlace: true });
             }
         // Current node is mutable and not root
         } else if(current.playMove(i, j, color, allowAll)) { // Play in current

@@ -51,7 +51,7 @@ board.checkTreeHeightChangedLoop = function() {
 		}
     }
 
-    requestAnimationFrame(board.checkTreeHeightChangedLoop);
+    setTimeout(board.checkTreeHeightChangedLoop, 50);
 };
 
 board.getTreeHeight = function() {
