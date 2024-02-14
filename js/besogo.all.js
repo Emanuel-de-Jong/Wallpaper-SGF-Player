@@ -3,6 +3,9 @@
 var besogo = window.besogo = window.besogo || {}; // Establish our namespace
 besogo.VERSION = '0.0.2-alpha';
 
+besogo.DEFAULT_TREE_SCALE = 0.25;
+besogo.treeScale = besogo.DEFAULT_TREE_SCALE;
+
 besogo.create = function(container, options) {
     var editor, // Core editor object
         resizer, // Auto-resizing function
@@ -3517,8 +3520,7 @@ besogo.makeTreePanel = function(container, editor) {
     var svg,
         pathGroup,
         bottomLayer,
-        currentMarker,
-        SCALE = 0.25; // Tree size scaling factor
+        currentMarker; // Tree size scaling factor
 
     rebuildNavTree();
     editor.addListener(treeUpdate);
@@ -3549,9 +3551,9 @@ besogo.makeTreePanel = function(container, editor) {
             height = container.clientHeight,
             top = container.scrollTop,
             left = container.scrollLeft,
-            markX = (marker.getAttribute('x') - 5) * SCALE, // Computed position of marker
-            markY = (marker.getAttribute('y') - 5) * SCALE,
-            GRIDSIZE = 120 * SCALE; // Size of the square grid
+            markX = (marker.getAttribute('x') - 5) * besogo.treeScale, // Computed position of marker
+            markY = (marker.getAttribute('y') - 5) * besogo.treeScale,
+            GRIDSIZE = 120 * besogo.treeScale; // Size of the square grid
 
         if (markX < left) { // Ensure horizontal visibility of current marker
             container.scrollLeft = markX;
@@ -3612,8 +3614,8 @@ besogo.makeTreePanel = function(container, editor) {
         width = 120 * nextOpen.length; // Compute height and width of nav tree
         height = 120 * Math.max.apply(Math, nextOpen);
         svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
-        svg.setAttribute('height', height * SCALE); // Scale down the actual SVG size
-        svg.setAttribute('width', width * SCALE);
+        svg.setAttribute('height', height * besogo.treeScale); // Scale down the actual SVG size
+        svg.setAttribute('width', width * besogo.treeScale);
 
         if (oldSvg) { // Replace SVG in container
             container.replaceChild(svg, oldSvg);
@@ -3623,6 +3625,8 @@ besogo.makeTreePanel = function(container, editor) {
 
         setCurrentMarker(current.navTreeMarker); // Set current marker and ensure visible
     } // END function rebuildNavTree
+    
+    editor.rebuildNavTree = rebuildNavTree;
 
     // Recursively builds the tree
     function recursiveTreeBuild(node, x, y, nextOpen) {

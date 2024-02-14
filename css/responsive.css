@@ -10,7 +10,7 @@
 
     .besogo-control button {
         width: 12%;
-        height: 4.5rem;
+        height: 6rem;
         font-size: 3em;
     }
 
@@ -24,6 +24,7 @@
     }
 
     .besogo-tree {
+        margin-top: 1.5rem;
         height: 30rem;
     }
 

@@ -4,6 +4,7 @@ custom.init = function() {
 	sgfController.init();
     board.init();
     settings.init();
+    responsive.init();
 
     settings.prevNodeBtnElement.addEventListener("click", custom.stopTimer);
     settings.nextNodeBtnElement.addEventListener("click", custom.stopTimer);
