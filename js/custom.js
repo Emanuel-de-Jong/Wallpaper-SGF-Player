@@ -1,11 +1,7 @@
 var custom = {};
 
 custom.init = function() {
-	window.addEventListener("error", (event) => {
-		console.error(event.message);
-	});
-
-    sgfController.init();
+	sgfController.init();
     board.init();
     settings.init();
 
@@ -18,7 +14,7 @@ custom.init = function() {
 
 	board.editor.addListener((event) => { if (event.treeChange) custom.stopTimer(); });
 
-	custom.isTimerRunning = true;
+	custom.startTimer();
     custom.timer();
 };
 
@@ -32,10 +28,12 @@ custom.stopTimer = function() {
 
 custom.prevSGFBtnClickListener = function() {
 	board.loadPrevSGF();
+	custom.startTimer();
 };
 
 custom.nextSGFBtnClickListener = function() {
 	board.loadNextSGF();
+	custom.startTimer();
 };
 
 custom.timer = async function() {

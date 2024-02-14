@@ -29,26 +29,33 @@ board.init = function() {
 		.querySelector("#board .besogo-tree")
 		.insertAdjacentHTML("afterend", '<div id="treeScrollbarY" style="display: none;"></div>');
 	board.treeScrollbarYElement = document.getElementById("treeScrollbarY");
-	board.treeElement = document.querySelector(".besogo-tree > svg");
+	board.treePrevHeight = board.getTreeHeight();
 
 	board.treeScrollbarXElement.addEventListener("mousemove", (event) => board.treeScrollbarXMousemoveListener(event));
 	board.treeScrollbarYElement.addEventListener("mousemove", (event) => board.treeScrollbarYMousemoveListener(event));
 
-	board.treeMutationObserver = new MutationObserver((mutationList) => {
-		for (const mutation of mutationList) {
-			if (mutation.type === "attributes" && mutation.attributeName === "height") {
-				if (board.treeElement.clientHeight > 100) {
-					board.treeScrollbarYElement.style.display = "block";
-				} else {
-					board.treeScrollbarYElement.style.display = "none";
-				}
-			}
-		}
-	});
-
-	board.treeMutationObserver.observe(board.treeElement, { attributes: true });
+	board.checkTreeHeightChangedLoop();
 
 	board.loadNextSGF();
+};
+
+board.checkTreeHeightChangedLoop = function() {
+    let treeHeight = board.getTreeHeight();
+    if (treeHeight != board.treePrevHeight) {
+        board.treePrevHeight = treeHeight;
+
+		if (treeHeight > 100) {
+			board.treeScrollbarYElement.style.display = "block";
+		} else {
+			board.treeScrollbarYElement.style.display = "none";
+		}
+    }
+
+    requestAnimationFrame(board.checkTreeHeightChangedLoop);
+};
+
+board.getTreeHeight = function() {
+	return parseInt(document.querySelector(".besogo-tree > svg").getAttribute("height"));
 };
 
 board.loadPrevSGF = function() {
