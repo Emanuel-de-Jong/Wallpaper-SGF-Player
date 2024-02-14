@@ -1,23 +1,23 @@
+:root {
+    --color-primary: #646464;
+    --color-background: #000000;
+    --color-current-stone: #0165fc;
+}
+
 ::-webkit-scrollbar {
     height: 0.3rem;
 }
 
 ::-webkit-scrollbar-track {
-    background: black; 
+    background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: black;
+    background: var(--color-background);
 }
 
 body {
-    background-color: black;
-}
-
-#board {
-    background-color: black;
-    height: 53.5rem;
-    margin-top: 6.5rem;
+    background-color: var(--color-background);
 }
 
 #board-container {
@@ -25,30 +25,45 @@ body {
     width: 45rem;
 }
 
+#board {
+    background-color: var(--color-background);
+    height: 53.5rem;
+    margin-top: 6.5rem;
+}
+
+.besogo-board svg g path[stroke="#0165fc"] {
+    stroke: var(--color-current-stone);
+}
+
+.besogo-control {
+    flex-wrap: nowrap;
+}
+
 .besogo-control button {
-    width: fit-content !important;
-    background-color: black;
-    color: rgb(100, 100, 100);
+    margin: 0 1px 0 1px;
+    width: 100%;
+    background-color: var(--color-background);
+    color: var(--color-primary);
     border: none;
 }
 
 .besogo-control button polygon {
-    fill: rgb(100, 100, 100);
+    fill: var(--color-primary);
 }
 
 .besogo-tree svg rect {
-    fill: black;
+    fill: var(--color-background);
 }
 
 .besogo-tree svg rect[fill="#06c2ac"] {
-   fill: rgb(100, 100, 100);
+   fill: var(--color-primary);
 }
 
 .besogo-tree svg g path {
-    stroke: rgb(100, 100, 100);
+    stroke: var(--color-primary);
 }
 
 #treeScrollbar {
-    background-color: rgb(100, 100, 100);
+    background-color: var(--color-primary);
     height: 3rem;
 }
