@@ -2,7 +2,7 @@ var board = {};
 
 board.init = function() {
 	board.element = document.getElementById("board");
-	board.treeScrollbarElement = document.getElementById("treeScrollbar");
+	board.treeScrollbarXElement = document.getElementById("treeScrollbarX");
 
 	besogo.create(board.element, {
         resize: "auto",
@@ -25,7 +25,13 @@ board.init = function() {
     document.querySelector('#board button[title="Variants: show/[hide]"]').remove();
     document.querySelector('#board button[title="Toggle coordinates"]').remove();
 
-	board.treeScrollbarElement.addEventListener("mousemove", (event) => board.treeScrollBarMousemoveListener(event));
+	document
+		.querySelector("#board .besogo-tree")
+		.insertAdjacentHTML("afterend", '<div id="treeScrollbarY"></div>');
+	board.treeScrollbarYElement = document.getElementById("treeScrollbarY");
+
+	board.treeScrollbarXElement.addEventListener("mousemove", (event) => board.treeScrollbarXMousemoveListener(event));
+	board.treeScrollbarYElement.addEventListener("mousemove", (event) => board.treeScrollbarYMousemoveListener(event));
 
 	board.loadNextSGF();
 };
@@ -55,13 +61,24 @@ board.next = function() {
 	board.editor.nextNode(1);
 };
 
-board.treeScrollBarMousemoveListener = function(event) {
+board.treeScrollbarXMousemoveListener = function(event) {
 	let treeContainerElement = document.querySelector(".besogo-tree");
 	let treeElement = document.querySelector(".besogo-tree > svg");
 
-	let mouseX = event.clientX - board.treeScrollbarElement.getBoundingClientRect().left;
-	let scrollRatio = mouseX / (board.treeScrollbarElement.clientWidth);
+	let mouseX = event.clientX - board.treeScrollbarXElement.getBoundingClientRect().left;
+	let scrollRatio = mouseX / (board.treeScrollbarXElement.clientWidth);
 
-	let scrollValue = scrollRatio * ((treeElement.clientWidth * 1.01) - board.treeScrollbarElement.clientWidth);
+	let scrollValue = scrollRatio * ((treeElement.clientWidth * 1.02) - board.treeScrollbarXElement.clientWidth);
 	treeContainerElement.scrollLeft = scrollValue;
+};
+
+board.treeScrollbarYMousemoveListener = function(event) {
+	let treeContainerElement = document.querySelector(".besogo-tree");
+	let treeElement = document.querySelector(".besogo-tree > svg");
+
+	let mouseY = event.clientY - board.treeScrollbarYElement.getBoundingClientRect().top;
+	let scrollRatio = mouseY / (board.treeScrollbarYElement.clientHeight);
+
+	let scrollValue = scrollRatio * ((treeElement.clientHeight * 1.01) - board.treeScrollbarYElement.clientHeight);
+	treeContainerElement.scrollTop = scrollValue;
 };

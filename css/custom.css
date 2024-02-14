@@ -1,10 +1,22 @@
 :root {
     --color-primary: #646464;
     --color-background: #000000;
+    --color-board: #e0bb6c;
     --color-current-stone: #0165fc;
 }
 
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-background);
+}
+
+
 ::-webkit-scrollbar {
+    width: 0.3rem;
     height: 0.3rem;
 }
 
@@ -13,12 +25,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+::-webkit-scrollbar-corner {
     background: var(--color-background);
 }
 
-body {
-    background-color: var(--color-background);
-}
 
 #board-container {
     margin: auto;
@@ -31,8 +44,20 @@ body {
     margin-top: 6.5rem;
 }
 
+.besogo-svg-board {
+    fill: var(--color-board);
+}
+
 .besogo-board svg g path[stroke="#0165fc"] {
     stroke: var(--color-current-stone);
+}
+
+.besogo-panels {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .besogo-control {
@@ -51,6 +76,10 @@ body {
     fill: var(--color-primary);
 }
 
+.besogo-tree {
+    height: 5.875rem;
+}
+
 .besogo-tree svg rect {
     fill: var(--color-background);
 }
@@ -63,7 +92,14 @@ body {
     stroke: var(--color-primary);
 }
 
-#treeScrollbar {
+#treeScrollbarX {
     background-color: var(--color-primary);
     height: 3rem;
+}
+
+#treeScrollbarY {
+    margin-left: 3px;
+    background-color: var(--color-primary);
+    width: 3rem;
+    height: 5rem;
 }

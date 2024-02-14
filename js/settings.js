@@ -4,21 +4,19 @@ settings.init = function() {
     settings.timerMS = 2500;
 
     document
-		.querySelector("#board .besogo-control")
-		.insertAdjacentHTML(
-			"beforeend",
-			'<button id="stopBtn">Stop</button>' +
-			'<button id="startBtn">Start</button>' +
-			'<button id="prevSGFBtn">Prev</button>' +
-			'<button id="nextSGFBtn">Next</button>' +
-			'<button id="sgfMS500Btn">0.5</button>' +
-			'<button id="sgfMS1000Btn">1</button>' +
-			'<button id="sgfMS1500Btn">1.5</button>' +
-			'<button id="sgfMS2000Btn">2</button>' +
-			'<button id="sgfMS2500Btn">2.5</button>' +
-			'<button id="sgfMS3000Btn">3</button>' +
-			'<button id="sgfMS3500Btn">3.5</button>'
-		);
+      .querySelector("#board .besogo-control")
+      .insertAdjacentHTML("beforeend",
+        '<button id="stopBtn">Stop</button>' +
+        '<button id="startBtn">Start</button>' +
+        '<button id="prevSGFBtn">Prev</button>' +
+        '<button id="nextSGFBtn">Next</button>' +
+        '<button id="sgfMS500Btn">0.5</button>' +
+        '<button id="sgfMS1000Btn">1</button>' +
+        '<button id="sgfMS1500Btn">1.5</button>' +
+        '<button id="sgfMS2000Btn">2</button>' +
+        '<button id="sgfMS2500Btn">2.5</button>' +
+        '<button id="sgfMS3000Btn">3</button>' +
+        '<button id="sgfMS3500Btn">3.5</button>');
     
     settings.prevNodeElement = document.querySelector('#board button[title="Previous node"]');
     settings.nextNodeElement = document.querySelector('#board button[title="Next node"]');
