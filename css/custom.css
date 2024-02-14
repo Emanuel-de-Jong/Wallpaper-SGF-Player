@@ -2,6 +2,7 @@
     --color-primary: #646464;
     --color-background: #000000;
     --color-board: #e0bb6c;
+    --color-board-lines: #343837;
     --color-current-stone: #0165fc;
 }
 
@@ -46,6 +47,18 @@ body {
 
 .besogo-svg-board {
     fill: var(--color-board);
+}
+
+.besogo-board svg text {
+    fill: var(--color-board-lines);
+}
+
+.besogo-svg-lines {
+    stroke: var(--color-board-lines);
+}
+
+.besogo-svg-hoshi {
+    stroke: var(--color-board-lines);
 }
 
 .besogo-board svg g path[stroke="#0165fc"] {

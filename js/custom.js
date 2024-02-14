@@ -4,6 +4,7 @@ custom.init = function() {
 	sgfController.init();
     board.init();
     settings.init();
+    wallpaperEngine.init();
     responsive.init();
 
     settings.prevNodeBtnElement.addEventListener("click", custom.stopTimer);
@@ -15,7 +16,12 @@ custom.init = function() {
 
 	board.editor.addListener((event) => { if (event.userStonePlace) custom.stopTimer(); });
 
-	custom.startTimer();
+	if (settings.startTimerOnSGFLoad) {
+		custom.startTimer();
+	} else {
+		custom.stopTimer();
+	}
+
     custom.timer();
 };
 
@@ -44,6 +50,10 @@ custom.timer = function() {
 	}
 
 	if (board.editor.getCurrent().children.length == 0) {
+		if (!settings.startTimerOnSGFLoad) {
+			custom.stopTimer();
+		}
+
 		board.loadNextSGF();
 		custom.timer();
 		return;

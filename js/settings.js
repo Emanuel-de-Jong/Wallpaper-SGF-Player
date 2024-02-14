@@ -2,6 +2,7 @@ var settings = {};
 
 settings.init = function() {
     settings.timerMS = 2500;
+    settings.startTimerOnSGFLoad = true;
 
     document
       .querySelector("#board .besogo-control")
