@@ -10,8 +10,8 @@
 
     .besogo-control button {
         width: 12%;
-        height: 2.5rem;
-        font-size: 26px;
+        height: 4.5rem;
+        font-size: 3em;
     }
 
     .besogo-control button[title="Previous node"],
