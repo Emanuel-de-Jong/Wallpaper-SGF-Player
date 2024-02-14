@@ -33,15 +33,15 @@ body {
 }
 
 
-#board-container {
+#boardContainer {
     margin: auto;
     width: 45rem;
+    margin-top: 6.5rem;
 }
 
 #board {
     background-color: var(--color-background);
     height: 53.5rem;
-    margin-top: 6.5rem;
 }
 
 .besogo-svg-board {
