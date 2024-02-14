@@ -1,6 +1,10 @@
 var custom = {};
 
 custom.init = function() {
+	window.addEventListener("error", (event) => {
+		console.error(event.message);
+	});
+
     sgfController.init();
     board.init();
     settings.init();
@@ -56,6 +60,6 @@ custom.timer = async function() {
 	}
 };
 
-(function () {
+document.addEventListener('DOMContentLoaded', () => {
 	custom.init();
-})();
+});

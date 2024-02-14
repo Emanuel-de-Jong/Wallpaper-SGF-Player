@@ -27,11 +27,26 @@ board.init = function() {
 
 	document
 		.querySelector("#board .besogo-tree")
-		.insertAdjacentHTML("afterend", '<div id="treeScrollbarY"></div>');
+		.insertAdjacentHTML("afterend", '<div id="treeScrollbarY" style="display: none;"></div>');
 	board.treeScrollbarYElement = document.getElementById("treeScrollbarY");
+	board.treeElement = document.querySelector(".besogo-tree > svg");
 
 	board.treeScrollbarXElement.addEventListener("mousemove", (event) => board.treeScrollbarXMousemoveListener(event));
 	board.treeScrollbarYElement.addEventListener("mousemove", (event) => board.treeScrollbarYMousemoveListener(event));
+
+	board.treeMutationObserver = new MutationObserver((mutationList) => {
+		for (const mutation of mutationList) {
+			if (mutation.type === "attributes" && mutation.attributeName === "height") {
+				if (board.treeElement.clientHeight > 100) {
+					board.treeScrollbarYElement.style.display = "block";
+				} else {
+					board.treeScrollbarYElement.style.display = "none";
+				}
+			}
+		}
+	});
+
+	board.treeMutationObserver.observe(board.treeElement, { attributes: true });
 
 	board.loadNextSGF();
 };
