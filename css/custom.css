@@ -37,11 +37,11 @@ body {
 #boardContainer {
     margin: auto;
     width: 45rem;
-    margin-top: 6rem;
+    margin-top: 4.5rem;
 }
 
 #sgfName {
-    color: var(--color-primary);
+    color: var(--color-background);
     font-size: 1.25em;
     font-weight: 700;
     text-align: center;

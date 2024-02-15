@@ -3,6 +3,18 @@ var wallpaperEngine = {};
 wallpaperEngine.init = function() {
     window.wallpaperPropertyListener = {
         applyUserProperties: (properties) => {
+            if (properties.autoplayonsgfload) {
+                settings.startTimerOnSGFLoad = properties.autoplayonsgfload.value;
+            }
+
+            if (properties.showsgfname) {
+                if (properties.showsgfname.value) {
+                    sgfController.sgfNameElement.style.color = "var(--color-primary)";
+                } else {
+                    sgfController.sgfNameElement.style.color = "var(--color-background)";
+                }
+            }
+
             if (properties.primarycolor) {
                 let color = properties.primarycolor.value.split(' ');
                 color = color.map((c) => {
@@ -51,10 +63,6 @@ wallpaperEngine.init = function() {
                 let colorRGB = 'rgb(' + color + ')';
 
                 document.documentElement.style.setProperty("--color-current-stone", colorRGB);
-            }
-
-            if (properties.autoplayonsgfload) {
-                settings.startTimerOnSGFLoad = properties.autoplayonsgfload.value;
             }
         }
     };
