@@ -2,6 +2,13 @@ var sgfController = {};
 
 sgfController.init = function() {
     sgfController.length = sgfController.sgfs.length;
+
+    sgfController.sgfNameElement = document.getElementById("sgfName");
+};
+
+sgfController.SetSGFName = function(name) {
+    sgfController.sgfName = name;
+    sgfController.sgfNameElement.innerHTML = sgfController.sgfName;
 };
 
 sgfController.goToRndSGF = function() {
@@ -10,9 +17,9 @@ sgfController.goToRndSGF = function() {
 
     let index = utils.randomInt(sgfController.length);
     sgfController.sgf = sgfController.sgfs[index][1];
-    sgfController.sgfName = sgfController.sgfs[index][0];
+    sgfController.SetSGFName(sgfController.sgfs[index][0]);
 
-    return sgfController.sgf;
+    board.loadSGF(sgfController.sgf);
 };
 
 sgfController.goToPrevSGF = function() {
@@ -21,9 +28,9 @@ sgfController.goToPrevSGF = function() {
     }
     
     sgfController.sgf = sgfController.prevSGF;
-    sgfController.sgfName = sgfController.prevSGFName;
+    sgfController.SetSGFName(sgfController.prevSGFName);
     
     sgfController.prevSGF = undefined;
 
-    return sgfController.sgf;
+    board.loadSGF(sgfController.sgf);
 };

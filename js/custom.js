@@ -42,12 +42,12 @@ custom.stopTimer = function() {
 };
 
 custom.prevSGFBtnClickListener = function() {
-	board.loadPrevSGF();
+	sgfController.goToPrevSGF();
 	custom.startTimer();
 };
 
 custom.nextSGFBtnClickListener = function() {
-	board.loadNextSGF();
+	sgfController.goToRndSGF();
 	custom.startTimer();
 };
 
@@ -62,7 +62,7 @@ custom.timer = function() {
 			custom.stopTimer();
 		}
 
-		board.loadNextSGF();
+		sgfController.goToRndSGF();
 		custom.timer();
 		return;
 	}

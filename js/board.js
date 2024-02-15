@@ -36,7 +36,7 @@ board.init = function() {
 
 	board.checkTreeHeightChangedLoop();
 
-	board.loadNextSGF();
+	sgfController.goToRndSGF();
 };
 
 board.checkTreeHeightChangedLoop = function() {
@@ -56,14 +56,6 @@ board.checkTreeHeightChangedLoop = function() {
 
 board.getTreeHeight = function() {
 	return parseInt(document.querySelector(".besogo-tree > svg").getAttribute("height"));
-};
-
-board.loadPrevSGF = function() {
-	board.loadSGF(sgfController.goToPrevSGF());
-};
-
-board.loadNextSGF = function() {
-	board.loadSGF(sgfController.goToRndSGF());
 };
 
 board.loadSGF = function(sgfContent) {
