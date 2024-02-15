@@ -4,10 +4,26 @@ sgfController.init = function() {
     sgfController.length = sgfController.sgfs.length;
 };
 
-sgfController.rnd = function() {
-    return sgfController.get(utils.randomInt(sgfController.length));
+sgfController.goToRndSGF = function() {
+    sgfController.prevSGF = sgfController.sgf;
+    sgfController.prevSGFName = sgfController.sgfName;
+
+    let index = utils.randomInt(sgfController.length);
+    sgfController.sgf = sgfController.sgfs[index][1];
+    sgfController.sgfName = sgfController.sgfs[index][0];
+
+    return sgfController.sgf;
 };
 
-sgfController.get = function(index) {
-    return "(;FF[4]GM[1]SZ[19]PB[]PW[]HA[0]KM[6.5]RU[Japanese];" + sgfController.sgfs[index];
+sgfController.goToPrevSGF = function() {
+    if (sgfController.prevSGF == undefined) {
+        return;
+    }
+    
+    sgfController.sgf = sgfController.prevSGF;
+    sgfController.sgfName = sgfController.prevSGFName;
+    
+    sgfController.prevSGF = undefined;
+
+    return sgfController.sgf;
 };

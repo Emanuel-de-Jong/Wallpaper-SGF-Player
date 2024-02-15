@@ -13,13 +13,11 @@ namespace SGFs_to_JS_List
             StringBuilder stringBuilder = new();
             foreach (string sgfPath in sgfPaths)
             {
-                string sgfContent = File.ReadAllText(sgfPath);
-                // remove (;FF[4]GM[1]SZ[19]PB[]PW[]HA[0]KM[6.5]RU[Japanese];
-                sgfContent = sgfContent.Substring(51);
-
-                stringBuilder.Append("\t\"");
-                stringBuilder.Append(sgfContent);
-                stringBuilder.AppendLine("\",");
+                stringBuilder.Append("\t[\"");
+                stringBuilder.Append(Path.GetFileNameWithoutExtension(sgfPath));
+                stringBuilder.Append("\", \"");
+                stringBuilder.Append(File.ReadAllText(sgfPath));
+                stringBuilder.AppendLine("\"],");
 
                 i++;
                 //if (i == 50)

@@ -59,22 +59,18 @@ board.getTreeHeight = function() {
 };
 
 board.loadPrevSGF = function() {
-	if (board.prevSGF == undefined) {
-		return;
-	}
-
-	board.currentSGF = board.prevSGF;
-	board.prevSGF = undefined;
-	board.loadSGF(board.currentSGF);
+	board.loadSGF(sgfController.goToPrevSGF());
 };
 
 board.loadNextSGF = function() {
-	board.prevSGF = board.currentSGF;
-	board.currentSGF = sgfController.rnd();
-	board.loadSGF(board.currentSGF);
+	board.loadSGF(sgfController.goToRndSGF());
 };
 
 board.loadSGF = function(sgfContent) {
+	if (sgfContent == undefined) {
+		return;
+	}
+
 	let sgf = besogo.parseSgf(sgfContent);
 	besogo.loadSgf(sgf, board.editor);
 };
