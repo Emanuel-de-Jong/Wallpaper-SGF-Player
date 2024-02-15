@@ -9,8 +9,8 @@ custom.init = async function() {
 
     settings.prevNodeBtnElement.addEventListener("click", custom.stopTimer);
     settings.nextNodeBtnElement.addEventListener("click", custom.stopTimer);
-    settings.startBtnElement.addEventListener("click", custom.startTimer);
     settings.stopBtnElement.addEventListener("click", custom.stopTimer);
+    settings.startBtnElement.addEventListener("click", custom.startTimer);
     settings.prevSGFBtnElement.addEventListener("click", custom.prevSGFBtnClickListener);
     settings.nextSGFBtnElement.addEventListener("click", custom.nextSGFBtnClickListener);
 
@@ -28,10 +28,16 @@ custom.init = async function() {
 };
 
 custom.startTimer = function() {
+	settings.stopBtnElement.classList.remove("btnActive");
+	settings.startBtnElement.classList.add("btnActive");
+
 	custom.isTimerRunning = true;
 };
 
 custom.stopTimer = function() {
+	settings.stopBtnElement.classList.add("btnActive");
+	settings.startBtnElement.classList.remove("btnActive");
+
 	custom.isTimerRunning = false;
 };
 

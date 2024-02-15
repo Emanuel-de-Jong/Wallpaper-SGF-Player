@@ -1,7 +1,6 @@
 var settings = {};
 
 settings.init = function() {
-    settings.timerMS = 2500;
     settings.startTimerOnSGFLoad = true;
 
     document
@@ -32,12 +31,46 @@ settings.init = function() {
     settings.sgfMS2500BtnElement = document.getElementById("sgfMS2500Btn");
     settings.sgfMS3000BtnElement = document.getElementById("sgfMS3000Btn");
     settings.sgfMS3500BtnElement = document.getElementById("sgfMS3500Btn");
+    
+    settings.timerMS = 2500;
+    settings.sgfMS2500BtnElement.classList.add("btnActive");
 
-    settings.sgfMS500BtnElement.addEventListener("click", () => { settings.timerMS = 500; });
-    settings.sgfMS1000BtnElement.addEventListener("click", () => { settings.timerMS = 1000; });
-    settings.sgfMS1500BtnElement.addEventListener("click", () => { settings.timerMS = 1500; });
-    settings.sgfMS2000BtnElement.addEventListener("click", () => { settings.timerMS = 2000; });
-    settings.sgfMS2500BtnElement.addEventListener("click", () => { settings.timerMS = 2500; });
-    settings.sgfMS3000BtnElement.addEventListener("click", () => { settings.timerMS = 3000; });
-    settings.sgfMS3500BtnElement.addEventListener("click", () => { settings.timerMS = 3500; });
+    settings.sgfMS500BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS500BtnElement.classList.add("btnActive");
+        settings.timerMS = 500; });
+    settings.sgfMS1000BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS1000BtnElement.classList.add("btnActive");
+        settings.timerMS = 1000; });
+    settings.sgfMS1500BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS1500BtnElement.classList.add("btnActive");
+        settings.timerMS = 1500; });
+    settings.sgfMS2000BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS2000BtnElement.classList.add("btnActive");
+        settings.timerMS = 2000; });
+    settings.sgfMS2500BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS2500BtnElement.classList.add("btnActive");
+        settings.timerMS = 2500; });
+    settings.sgfMS3000BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS3000BtnElement.classList.add("btnActive");
+        settings.timerMS = 3000; });
+    settings.sgfMS3500BtnElement.addEventListener("click", () => {
+        settings.setAllBtnInactive();
+        settings.sgfMS3500BtnElement.classList.add("btnActive");
+        settings.timerMS = 3500; });
+};
+
+settings.setAllBtnInactive = function() {
+    settings.sgfMS500BtnElement.classList.remove("btnActive");
+    settings.sgfMS1000BtnElement.classList.remove("btnActive");
+    settings.sgfMS1500BtnElement.classList.remove("btnActive");
+    settings.sgfMS2000BtnElement.classList.remove("btnActive");
+    settings.sgfMS2500BtnElement.classList.remove("btnActive");
+    settings.sgfMS3000BtnElement.classList.remove("btnActive");
+    settings.sgfMS3500BtnElement.classList.remove("btnActive");
 };

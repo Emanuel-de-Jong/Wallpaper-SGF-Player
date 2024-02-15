@@ -89,6 +89,10 @@ body {
     fill: var(--color-primary);
 }
 
+.btnActive {
+    font-weight: 700;
+}
+
 .besogo-tree {
     height: 5.875rem;
 }
