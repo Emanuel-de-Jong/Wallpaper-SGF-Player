@@ -4,6 +4,10 @@
         margin-top: 0;
     }
 
+    #sgfName {
+        display: none;
+    }
+
     .besogo-control {
         flex-wrap: wrap;
     }
