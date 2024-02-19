@@ -34,6 +34,11 @@ body {
 }
 
 
+#debug { 
+    color: white;
+    overflow-wrap: break-word;
+}
+
 #boardContainer {
     margin: auto;
     width: 45rem;

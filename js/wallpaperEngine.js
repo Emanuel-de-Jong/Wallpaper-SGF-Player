@@ -3,6 +3,16 @@ var wallpaperEngine = {};
 wallpaperEngine.init = function() {
     window.wallpaperPropertyListener = {
         applyUserProperties: (properties) => {
+            if (properties.schemecolor) {
+                let color = properties.schemecolor.value.split(' ');
+                color = color.map((c) => {
+                    return Math.ceil(c * 255);
+                });
+                let colorRGB = 'rgb(' + color + ')';
+
+                document.documentElement.style.setProperty("--color-background", colorRGB);
+            }
+
             if (properties.autoplayonsgfload) {
                 settings.startTimerOnSGFLoad = properties.autoplayonsgfload.value;
             }
@@ -27,16 +37,6 @@ wallpaperEngine.init = function() {
                 let colorRGB = 'rgb(' + color + ')';
 
                 document.documentElement.style.setProperty("--color-primary", colorRGB);
-            }
-            
-            if (properties.backgroundcolor) {
-                let color = properties.backgroundcolor.value.split(' ');
-                color = color.map((c) => {
-                    return Math.ceil(c * 255);
-                });
-                let colorRGB = 'rgb(' + color + ')';
-
-                document.documentElement.style.setProperty("--color-background", colorRGB);
             }
             
             if (properties.boardcolor) {
