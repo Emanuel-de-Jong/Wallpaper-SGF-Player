@@ -1,10 +1,11 @@
 var settings = {};
 
-settings.TIMER_MS_BTN_NAME = "timerMSBtn"
+settings.TIMER_MS_BTN_NAME = "timerMSBtn";
+
+settings.startTimerOnSGFLoad = true;
+settings.startingMovesToSkip = 0;
 
 settings.init = function() {
-    settings.startTimerOnSGFLoad = true;
-
     settings.timerMSOptions = [
         500,
         1000,

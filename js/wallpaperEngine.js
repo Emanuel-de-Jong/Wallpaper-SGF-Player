@@ -15,6 +15,10 @@ wallpaperEngine.init = function() {
                 }
             }
 
+            if (properties.startingmovestoskip) {
+                settings.startingMovesToSkip = properties.startingmovestoskip.value;
+            }
+
             if (properties.primarycolor) {
                 let color = properties.primarycolor.value.split(' ');
                 color = color.map((c) => {

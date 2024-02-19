@@ -1,9 +1,9 @@
 var sgfController = {};
 
+sgfController.sgfNameElement = document.getElementById("sgfName");
+
 sgfController.init = function() {
     sgfController.length = sgfController.sgfs.length;
-
-    sgfController.sgfNameElement = document.getElementById("sgfName");
 };
 
 sgfController.SetSGFName = function(name) {

@@ -1,10 +1,13 @@
 var custom = {};
 
 custom.init = async function() {
+    wallpaperEngine.init();
+
+	await utils.sleepAsync(500);
+	
 	sgfController.init();
     board.init();
     settings.init();
-    wallpaperEngine.init();
     responsive.init();
 
     settings.prevNodeBtnElement.addEventListener("click", custom.stopTimer);
@@ -15,8 +18,6 @@ custom.init = async function() {
     settings.nextSGFBtnElement.addEventListener("click", custom.nextSGFBtnClickListener);
 
 	board.editor.addListener((event) => { if (event.userStonePlace) custom.stopTimer(); });
-
-	await utils.sleepAsync(500);
 
 	if (settings.startTimerOnSGFLoad) {
 		custom.startTimer();
