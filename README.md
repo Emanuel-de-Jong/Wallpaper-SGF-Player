@@ -1,4 +1,4 @@
-# Wallpaper-SGF-Player
+# Wallpaper SGF Player
 
 ![Screenshot](https://raw.githubusercontent.com/Emanuel-de-Jong/Wallpaper-SGF-Player/main/preview.png)
 
