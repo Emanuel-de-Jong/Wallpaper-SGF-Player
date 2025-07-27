@@ -1,0 +1,87 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Plays high quality AI games on auto-play. Pausing and trying out variations is possible.",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"autoplayonsgfload" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "Auto-play on start and next sgf",
+				"type" : "bool",
+				"value" : true
+			},
+			"boardcolor" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "Board color",
+				"type" : "color",
+				"value" : "0.8784313725490196 0.7333333333333333 0.4235294117647059"
+			},
+			"boardlinescolor" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "Board lines color",
+				"type" : "color",
+				"value" : "0.20392156862745098 0.2196078431372549 0.21568627450980393"
+			},
+			"currentstonecolor" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "Current stone color",
+				"type" : "color",
+				"value" : "0 0.3803921568627451 0.9568627450980393"
+			},
+			"primarycolor" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "Primary color",
+				"type" : "color",
+				"value" : "0.39215686274509803 0.39215686274509803 0.39215686274509803"
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"showsgfname" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "Show sgf name",
+				"type" : "bool",
+				"value" : false
+			},
+			"startingmovestoskip" : 
+			{
+				"fraction" : false,
+				"index" : 2,
+				"max" : 50,
+				"min" : 0,
+				"order" : 102,
+				"text" : "Starting moves to skip",
+				"type" : "slider",
+				"value" : 0
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Game" ],
+	"title" : "Wallpaper SGF Player (Go, Igo, Weiqi, Wei Qi, Baduk)",
+	"type" : "web",
+	"version" : 8,
+	"visibility" : "public",
+	"workshopid" : "3160167480",
+	"workshopurl" : "steam://url/CommunityFilePage/3160167480"
+}
