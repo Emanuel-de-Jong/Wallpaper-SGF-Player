@@ -5,8 +5,8 @@ The auto play speed can be changed with the numbers on the bottom left. You can 
 
 You need Wallpaper Engine to make it work. Install it and get the SGF player [here](https://steamcommunity.com/sharedfiles/filedetails/?id=3160167480). You can change the SGF player's settings in the Wallpaper Engine window. Settings include changes in the player's behavior and visual customization like changing certain colors. 
 
-**Active Development:** <br>
-**Last Change:** <br>
+**Active Development:** 2024-02-13 - 2024-02-15<br>
+**Last Change:** 2024-02-19<br>
 
 | | |
 | :---: | :---: |
