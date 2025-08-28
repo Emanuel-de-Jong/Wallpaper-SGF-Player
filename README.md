@@ -11,3 +11,4 @@ You need Wallpaper Engine to make it work. Install it and get the SGF player [he
 | | |
 | :---: | :---: |
 | ![](/Screenshots/1-Variations.png) | ![](/Screenshots/.png) |
+ 
